@@ -54,6 +54,13 @@ send :: BS.BufferedSocket -> s -> IO ()
 Sends any basic data type and both lazy and strict ByteStrings
 If you wish to send any other kind of data use encoding methods for the data type.
 
+```haskell
+flush :: BufferedSocket -> IO ()
+```
+Data is not sent to the network unless:
+1. The writing buffer is full
+2. Flush is called
+
 
 ###  Buffer functionalities 
 ##### Input
