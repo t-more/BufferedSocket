@@ -5,13 +5,12 @@ This package is made to make reading and writing from network sockets easy in ha
 
 To make a socket you need three things.
 
-1: A socket made from the Network package (BufferedSockets doesn't meddle with your configuration so you have to do all this yourself)
+1. A socket made from the Network package (BufferedSockets doesn't meddle with your configuration so you have to do all this yourself)
+2. Descide output buffer size 
 
-2: Descide output buffer size 
+3. Descide input buffer size
 
-3: Descide input buffer size
-
-(4: party like it's 1969) 
+4. (party like it's 1969) 
 
 this is done with the following function:
 ```haskell
