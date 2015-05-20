@@ -1,0 +1,1 @@
+This Package contains the source for a "BufferedSocket" These sockets are used as wrappers for normal network sockets but brings functions to easily manage the input and output of different kinds of data
