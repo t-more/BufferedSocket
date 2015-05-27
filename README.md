@@ -1,18 +1,18 @@
 ### BufferedSocket
-##### A wrapper for network Sockets
+##### A wrapper for network sockets
 
 This package is made to make reading and writing from network sockets easy in haskell.
 
-To make a socket you need three things.
+To make a socket you need three things:
 
-1. A socket made from the Network package (BufferedSockets doesn't meddle with your configuration so you have to do all this yourself)
-2. Descide output buffer size 
+1. A socket made from the Network package (BufferedSockets does not meddle with your configuration so you have to do all this yourself)
+2. Decide output buffer size 
 
-3. Descide input buffer size
+3. Decide input buffer size
 
 4. (party like it's 1969) 
 
-this is done with the following function:
+This is done with the following function:
 ```haskell
 makeBufferedSocket :: (Socket, SockAddr) -> InputBufferSize -> OutputBufferSize -> IO BufferedSocket
 ```
@@ -30,7 +30,7 @@ This is amongst Word8 to Word64 and Int8 to Int64
 ```haskell
 readString :: BS.BufferedSocket -> Int -> IO s
 ```
-Thea readString funtcion can read both lazy and strict bytestrings. 
+The readString function can read both lazy and strict bytestrings. 
 But you need to provide the number of bytes to read.
 
 To read any other kind of data is is reccomended to still use these functions. And then use decoding methods to get the data format you want. 
@@ -44,7 +44,7 @@ readToByteString :: BufferedSocket -> ByteString -> IO ByteString
 readToByteStringMax :: BufferedSocket -> ByteString -> MaxLength -> IO (Maybe ByteString)
 ```
 The above functions are made to scan the input buffer for specific bytes. All of them of course reads more data from the network if necesarry 
-However it is reccomended to use the "Max" verions of the functions as they put a limit to how much data may be read 
+However it is recommended to use the "Max" verions of the functions as they put a limit to how much data that may be read.
 
 
 #####  Writing:
@@ -93,7 +93,7 @@ testServerMaxConnections = 1
 bufferSize = 1024 * 10
 
 -- This is an example how to make a TCP server in haskell 
--- Keep in mind that this is a pretty supid server 
+-- Keep in mind that this is a pretty "minimalistic" server 
 
 makeTestTcpServer:: (BS.BufferedSocket -> IO ())  -> IO ()
 makeTestTcpServer thunk  = NS.withSocketsDo $ do 
