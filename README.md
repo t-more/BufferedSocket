@@ -1,5 +1,5 @@
 ### BufferedSocket
-##### A wrapper for webSockets
+##### A wrapper for network Sockets
 
 This package is made to make reading and writing from network sockets easy in haskell.
 
