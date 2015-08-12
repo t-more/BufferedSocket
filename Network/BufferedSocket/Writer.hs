@@ -18,10 +18,7 @@ WARNINGS:
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE FlexibleInstances #-}
 module Network.BufferedSocket.Writer
-( sendText
-, sendTextLazy
-, sendString
-, sendWord8
+( sendWord8
 , sendWord16
 , sendWord32
 , sendWord64
@@ -106,15 +103,6 @@ sendLazyReal bSocket (x:xs) = BS.sendByteString bSocket x >> sendLazyReal bSocke
 sendLazy :: BS.BufferedSocket -> BL.ByteString -> IO ()
 sendLazy bSocket lazyBytestring = sendLazyReal bSocket $ BL.toChunks lazyBytestring
 
-
-sendText:: BS.BufferedSocket -> T.Text -> IO ()
-sendText bSocket textData = BS.sendByteString bSocket $ ENC.encodeUtf8 textData
-
-sendTextLazy:: BS.BufferedSocket -> TL.Text -> IO ()
-sendTextLazy bSocket lazyText = sendLazy bSocket $ ENCL.encodeUtf8 lazyText
-
-sendString:: BS.BufferedSocket -> String -> IO ()
-sendString bSocket string = sendLazy bSocket $ fromString string
 
 
 

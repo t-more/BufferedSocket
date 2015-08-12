@@ -10,7 +10,7 @@ name:                BufferedSocket
 -- PVP summary:      +-+------- breaking API changes
 --                   | | +----- non-breaking API additions
 --                   | | | +--- code changes with no API change
-version:             0.2.0.0
+version:             0.2.1.0
 
 -- A short (one-line) description of the package.
 synopsis:            A socker wrapper that makes the IO of sockets much cleaner
@@ -40,7 +40,7 @@ build-type:          Simple
 
 -- Extra files to be distributed with the package, such as examples or a 
 -- README.
-extra-source-files:  README
+extra-source-files:  README.md
 
 -- Constraint on the version of Cabal needed to build this package.
 cabal-version:       >=1.10
@@ -57,7 +57,7 @@ library
   other-extensions:    OverloadedStrings, FlexibleInstances
   
   -- Other library packages from which modules are imported.
-  build-depends:       base >=4.7 && <4.8, bytestring >=0.10 && <0.11, text >=1.1 && <1.2, network >=2.4 && <2.5
+  build-depends:       base >=4.7 && < 5.0, bytestring >=0.10 && <0.11, text >=1.1 && <1.3, network >=2.4 && <2.7
   
   -- Directories containing source files.
   -- hs-source-dirs:      
